@@ -1,0 +1,26 @@
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    padding:5%;
+  }
+  
+  .faq-item {
+    padding: 15px;
+    border-radius: 8px;
+     box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    margin: 7px;
+  }
+  
+  .faq-question {
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .faq-answer {
+    color: rgb(145, 143, 143);
+    font-size: 1rem;
+  }
+  

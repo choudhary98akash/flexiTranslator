@@ -1,0 +1,105 @@
+<div class="header">
+  <span class="title-container" (click)="showHome()"><a href="#">FlexiTranslator</a></span>
+
+  <!-- <div class="hamburger-icon">&#9776;</div> -->
+
+
+  <ul class="nav-items">
+    <span class="item" (click)="showHOwTo()">
+      <li><a href="#">HOW TO USE OUR SERVICE</a></li>
+    </span>
+    <span class="item" (click)="showFaq()">
+      <li><a href="#">FAQs</a></li>
+    </span>
+    <span class="item" (click)="showFeedBack()">
+      <li><a href="#">CONTACT US </a></li>
+    </span>
+  </ul>
+</div>
+
+
+
+<div *ngIf="home" class="main-container">
+  <div class="first-two">
+    <span class="container-for-text">
+      <span class="text-container-one">Want to translate</span>
+      <!-- <span class="text-container-two">free of cost|</span> -->
+      <app-animate [textToAnimate]="'free of cost.'" [customClass]="'text-container-two'"></app-animate>
+    </span>
+
+    <span class="form-container">
+      <span class="tab">Try Our Service</span>
+      <div class="custom-input-container">
+        <input type="text" class="custom-input" [(ngModel)]="inputText" placeholder="Type something...">
+        <!-- ignore vs extension error -->
+      </div>
+
+      <div class="btn-translate">
+        <!-- This is suppose to be the drop down -->
+        <span class="width">
+          <select  class="btn-white-2" [(ngModel)]="sourceLanguage">  
+            <option *ngFor="let language of languages" [value]="language">{{ language }}</option>
+          </select>
+        </span>
+        <span class="width container-to">TO</span>
+        <span class="width">
+          <select  class="btn-white-2" [(ngModel)]="targetLanguage">  
+            <option *ngFor="let language of languages" [value]="language">{{ language }}</option>
+          </select>
+        </span>
+
+      </div>
+      <div>
+        <button class="btn-white-2" (click)="sendOutput(sourceLanguage,targetLanguage)">Translate</button>
+      </div>
+
+      <div *ngIf="result" class="result-container">
+        {{resultText}}
+      </div>
+    </span>
+  </div>
+
+
+  <div class="stats-container" *ngIf="!result">
+    <div class="stats-box">
+      <div class="stats-content">
+        <div class="stats-number">{{stats.visitor}}+</div>
+        <div class="stats-label">Visitors</div>
+      </div>
+    </div>
+    <div class="stats-box">
+      <div class="stats-content">
+        <div class="stats-number">{{stats.apiHits}}+</div>
+        <div class="stats-label">Api hits</div>
+      </div>
+    </div>
+    <div class="stats-box">
+      <div class="stats-content">
+        <div class="stats-number">{{stats.loves}}+</div>
+        <div class="stats-label">Love this</div>
+      </div>
+    </div>
+    <div class="stats-box">
+      <div class="stats-content">
+        <div class="stats-number">{{stats.contributions}}+</div>
+        <div class="stats-label">Contributions</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-how-to *ngIf="howto"></app-how-to>
+
+<app-faq *ngIf="faq"></app-faq>
+
+<app-feedback *ngIf="feedback"></app-feedback>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<footer class="footer">
+  <p class="text-footer">&copy; 2024 FlexiTranslator. All rights reserved.</p>
+</footer>

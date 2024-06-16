@@ -1,0 +1,11 @@
+<div class="how-to-use">
+    <div class="how-to-guide">
+      <div *ngFor="let step of steps" class="step">
+        <div class="step-content">
+          <div class="text">
+            <h2>{{ step.title }}</h2>
+            <p>{{ step.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>

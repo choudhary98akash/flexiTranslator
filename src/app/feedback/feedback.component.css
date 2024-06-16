@@ -1,0 +1,29 @@
+.feedback-form-conatainer{
+    display: flex;
+    justify-content: space-around;
+
+}
+.bottom-margin{
+    margin-bottom:7%;
+    padding: 5%;
+}
+.feed-box{
+    width: 350px;
+}
+.contact-container{
+ display: flex;
+ flex-direction: column;
+ max-width: 50%;
+}
+.share-container{
+ font-family: Arial, Helvetica, sans-serif;
+ letter-spacing: 2px;
+ font-size: 1.2rem;
+ padding: 10px;
+ line-height: 1.5;
+}
+.custom-edit{
+    font-size: 3rem;
+    color: red;
+    
+}

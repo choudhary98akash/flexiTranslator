@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    background-image: url('../src/assets/images/BG-IMAGE-1376x786-PG3.png');
+    background-repeat: repeat; 
+    background-size: cover;
+    margin: 0; font-family: "Tahoma", "Helvetica Neue", sans-serif; 
+}
+.mid-text{
+    display: flex;
+    padding: 2%;
+    color: white;
+    font-family: "Tahoma";
+    font-size: 1.5rem;
+    justify-content: center;
+  }
+
+  .btn-white-2 {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #000; 
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-white-2:hover {
+    background-color: #eee;
+    color: #333; 
+  }
+
+  .custom-input {
+    width: 100%;
+    padding: 10px;
+    border: 3.5px solid #fff;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding is included in the total width */
+    font-size: 16px;
+    color: #ffffff; /* Text color inside the input */
+    background-color: #000000;
+  }
+  .text-container-two{
+    display: block;
+    font-size: 3.5rem;
+  }
+  
