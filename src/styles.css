@@ -48,5 +48,6 @@ body {
   .text-container-two{
     display: block;
     font-size: 3.5rem;
+    color: red;
   }
   
