@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SampleApiService } from './sample-api.service';
-import { FetchStatsService } from './fetch-stats.service';
+import { FetchStatsService,Stats } from './fetch-stats.service';
 
 
 @Component({
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit{
   howto = false;
   contact = false;
   inputText = '';
-  resultText ='';
+  resultText : any;
   result = false;
   sourceLanguage ='English';
   targetLanguage = 'Japanese';
@@ -161,15 +161,35 @@ export class AppComponent implements OnInit{
     "Yoruba",
     "Zulu"
   ];
-  stats! : {
-    visitor :string,
-    apiHits :string,
-    contributions : string,
-    loves :string
-}
+  stats : Stats = {
+    visitor: 0,
+    apiHits: 0,
+    loves: 0,
+    contributions: 0
+  };
   
   ngOnInit(): void {
-    this.stats = this.fetchStatService.fetch();
+    const finalStats = this.fetchStatService.fetch();
+    console.log(finalStats.apiHits,finalStats.visitor,finalStats.contributions,finalStats.loves, 'are the stats api ,visitor ,contri and loves ');
+    this.animateValue('visitor', finalStats.visitor);
+    this.animateValue('apiHits', finalStats.apiHits);
+    this.animateValue('loves', finalStats.loves);
+    this.animateValue('contributions', finalStats.contributions);
+  }
+
+  animateValue(key: keyof Stats, end: number) {
+    let start = 0;
+    const duration = 2000; // duration in milliseconds
+    const stepTime = Math.abs(Math.floor(duration / end));
+    const obj = this.stats;
+
+    const timer = setInterval(() => {
+      start += 1;
+      obj[key] = start;
+      if (start === end) {
+        clearInterval(timer);
+      }
+    }, stepTime);
   }
 
 
@@ -179,9 +199,9 @@ export class AppComponent implements OnInit{
       alert('Please enter something to convert');
     }
     else{
-      this.resultText = this.sampleApiService.sendResult(source,target);
+      this.resultText = this.sampleApiService.sendResult(this.inputText,target,source);
     }
-     this.resultText === ''? this.result = false : this.result = true;
+     this.resultText === undefined? this.result = false : this.result = true;
   }
 
 

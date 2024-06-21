@@ -1,9 +1,6 @@
+
 <div class="header">
   <span class="title-container" (click)="showHome()"><a href="#">FlexiTranslator</a></span>
-
-  <!-- <div class="hamburger-icon">&#9776;</div> -->
-
-
   <ul class="nav-items">
     <span class="item" (click)="showHOwTo()">
       <li><a href="#">HOW TO USE OUR SERVICE</a></li>
@@ -23,7 +20,6 @@
   <div class="first-two">
     <span class="container-for-text">
       <span class="text-container-one">Want to translate</span>
-      <!-- <span class="text-container-two">free of cost|</span> -->
       <app-animate [textToAnimate]="'free of cost.'" [customClass]="'text-container-two'"></app-animate>
     </span>
 
@@ -31,11 +27,9 @@
       <span class="tab">Try Our Service</span>
       <div class="custom-input-container">
         <input type="text" class="custom-input" [(ngModel)]="inputText" placeholder="Type something...">
-        <!-- ignore vs extension error -->
       </div>
 
       <div class="btn-translate">
-        <!-- This is suppose to be the drop down -->
         <span class="width">
           <select  class="btn-white-2" [(ngModel)]="sourceLanguage">  
             <option *ngFor="let language of languages" [value]="language">{{ language }}</option>
@@ -100,6 +94,13 @@
 <br>
 <br>
 
+
 <footer class="footer">
-  <p class="text-footer">&copy; 2024 FlexiTranslator. All rights reserved.</p>
+  <!-- <p class="text-footer">&copy; 2024 FlexiTranslator. All rights reserved.</p> -->
+  <div class="top-donation-box">
+    <span class="txt">Support our work </span>
+    <a href="https://www.buymeacoffee.com/Coffee4Akash" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 35px !important;" ></a>
+    <!-- <span class="txt">OR </span> -->
+    
+  </div>
 </footer>

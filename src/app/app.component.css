@@ -16,9 +16,20 @@
     color: white;
 
 }
+.txt{
+  font-size: 1.2rem;
+  padding : 0px 15px;
+}
+
+.top-donation-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 40px;
+}
 
 .header{
-    padding: 2vw;
+    padding: 0 2vw 2vw 2vw;
     display: flex;
     justify-content: space-between;
     align-items: center;

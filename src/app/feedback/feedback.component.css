@@ -1,6 +1,7 @@
 .feedback-form-conatainer{
     display: flex;
     justify-content: space-around;
+    padding: 0% 5% 5% 5%;
 
 }
 .bottom-margin{
@@ -8,9 +9,12 @@
     padding: 5%;
 }
 .feed-box{
-    width: 350px;
+    width: 325px;
+    margin:5%;
+    
 }
 .contact-container{
+    margin :5%;
  display: flex;
  flex-direction: column;
  max-width: 50%;
@@ -26,4 +30,7 @@
     font-size: 3rem;
     color: red;
     
+}
+.desc{
+    padding: 30px 10px;
 }
