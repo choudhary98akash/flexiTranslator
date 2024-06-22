@@ -8,22 +8,36 @@ export class SampleApiService {
 
   constructor() { }
 
-  private apiUrl = 'https://script.google.com/macros/s/AKfycbxtn_1sujv8AQ2IXXhQYolgsCzVdwB3D4dRiQStE4UR-cuO_C18TNN-WrpdLa5kv64t/exec';
+  private apiUrl = 'https://your-netlify-site.netlify.app/.netlify/functions/translate'; // Update with your Netlify function URL
 
-  async sendResult(text: string, targetLang: string, sourceLang: string): Promise<string|undefined> {
-    const params = {
+  async sendResult(text: string, targetLang: string, sourceLang: string): Promise<string | undefined> {
+    const params = new URLSearchParams({
       q: text,
       target: targetLang,
-      source: sourceLang
-    };
+      source: sourceLang,
+    });
 
     try {
-      const response = await axios.get(this.apiUrl, { params });
-      console.log(response.data);
-      return response.data.translatedText;
+      const response = await fetch(`${this.apiUrl}?${params.toString()}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json", // Update content type to JSON
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+
+      const responseData = await response.json();
+      console.log(responseData);
+      return responseData.translatedText;
     } catch (error) {
       console.error('Error translating text:', error);
       throw error;
     }
   }
+  
+  
+  
 }
