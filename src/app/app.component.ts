@@ -170,7 +170,7 @@ export class AppComponent implements OnInit{
   
   ngOnInit(): void {
     const finalStats = this.fetchStatService.fetch();
-    console.log(finalStats.apiHits,finalStats.visitor,finalStats.contributions,finalStats.loves, 'are the stats api ,visitor ,contri and loves ');
+    // console.log(finalStats.apiHits,finalStats.visitor,finalStats.contributions,finalStats.loves, 'are the stats api ,visitor ,contri and loves ');
     this.animateValue('visitor', finalStats.visitor);
     this.animateValue('apiHits', finalStats.apiHits);
     this.animateValue('loves', finalStats.loves);
@@ -199,6 +199,7 @@ export class AppComponent implements OnInit{
       alert('Please enter something to convert');
     }
     else{
+      console.log('Source ',source,'Target',target,'INput text : ',this.inputText);
       this.resultText = this.sampleApiService.sendResult(this.inputText,target,source);
     }
      this.resultText === undefined? this.result = false : this.result = true;
