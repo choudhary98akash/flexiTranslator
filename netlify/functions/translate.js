@@ -2,6 +2,18 @@ exports.handler = async (event, context) => {
   // Dynamically import node-fetch
   const fetch = (await import('node-fetch')).default;
 
+  // Handle CORS preflight request
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+      },
+    };
+  }
+
   // Parse query parameters from the event object
   const { q, source, target } = event.queryStringParameters;
 
@@ -19,6 +31,7 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({ translatedText }),
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',  // Allow CORS
       },
     };
   } catch (error) {
@@ -28,6 +41,7 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({ error: 'Failed to fetch translation' }),
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',  // Allow CORS
       },
     };
   }
