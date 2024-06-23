@@ -8,7 +8,7 @@ export class SampleApiService {
 
   constructor() { }
 
-  private apiUrl = 'https://your-netlify-site.netlify.app/.netlify/functions/translate'; // Update with your Netlify function URL
+  private apiUrl = 'https://667789ab2952aa000809b007--dynamic-croquembouche-427cf3.netlify.app/.netlify/functions/translate'; // Update with your Netlify function URL
 
   async sendResult(text: string, targetLang: string, sourceLang: string): Promise<string | undefined> {
     const params = new URLSearchParams({
