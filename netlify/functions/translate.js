@@ -1,8 +1,7 @@
-// netlify/functions/translate.js
-
-const fetch = require('node-fetch');
-
 exports.handler = async (event, context) => {
+  // Dynamically import node-fetch
+  const fetch = (await import('node-fetch')).default;
+
   // Parse query parameters from the event object
   const { q, source, target } = event.queryStringParameters;
 
