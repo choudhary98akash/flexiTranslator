@@ -31,14 +31,16 @@
 
       <div class="btn-translate">
         <span class="width">
-          <select  class="btn-white-2" [(ngModel)]="sourceLanguage">  
-            <option *ngFor="let language of languages" [value]="language">{{ language }}</option>
+          <select  class="btn-white-2" [(ngModel)]="sourceLanguage"> 
+            <option [value]="'en'">English</option>
+            <option *ngFor="let language of languages" [value]="language.code">{{ language.name }}</option>
           </select>
         </span>
         <span class="width container-to">TO</span>
         <span class="width">
           <select  class="btn-white-2" [(ngModel)]="targetLanguage">  
-            <option *ngFor="let language of languages" [value]="language">{{ language }}</option>
+            <option [value]="'jp'">Japanese</option>
+            <option *ngFor="let language of languages" [value]="language.code">{{ language.name }}</option>
           </select>
         </span>
 
