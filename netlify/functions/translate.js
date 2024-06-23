@@ -1,7 +1,9 @@
 exports.handler = async (event, context) => {
   // Dynamically import node-fetch
   const fetch = (await import('node-fetch')).default;
-
+  const app = reuire('express');
+  const cors = require('cors');
+  app.use(cors());
   // Handle CORS preflight request
   if (event.httpMethod === 'OPTIONS') {
     return {

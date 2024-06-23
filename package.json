@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "axios": "^1.7.2",
+    "cors": "^2.8.5",
     "lite-server": "^2.6.1",
     "node-fetch": "^3.3.2",
     "rxjs": "~7.8.0",
