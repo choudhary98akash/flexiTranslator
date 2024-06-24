@@ -1,6 +1,6 @@
 exports.handler = async (event, context) => {
   const fetch = (await import('node-fetch')).default;
-  const app = reuire('express');
+  const app = require('express');
   const cors = require('cors');
   app.use(cors());
   const { q, source, target } = event.queryStringParameters;
