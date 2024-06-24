@@ -17,7 +17,6 @@ export class SampleApiService {
 
     try {
       const response = await axios.get(`${this.apiUrl}?${params.toString()}`);
-      console.log(response.data, 'Response from API in JSON');
       return response.data.translatedText;
     } catch (error) {
       console.error('Error translating text:', error);
