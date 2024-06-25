@@ -41,7 +41,7 @@ exports.handler = async (event, context) => {
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ translatedText }),
+      body: JSON.stringify({ translatedText : response }),
     };
   } catch (error) {
     // Handle errors
