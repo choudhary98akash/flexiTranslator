@@ -30,7 +30,7 @@ exports.handler = async (event, context) => {
 
   try {
     const response = await fetch(scriptUrl);
-    const result = await response.JSON();
+    const result = await response.text();
     return {
       statusCode: 200,
       headers: {

@@ -33,7 +33,7 @@ exports.handler = async (event, context) => {
   try {
     // Fetch translation from Google Apps Script
     const response = await fetch(scriptUrl);
-    const translatedText = await response.JSON();
+    const translatedText = await response.text();
     
     // Return the translated text
     return {
