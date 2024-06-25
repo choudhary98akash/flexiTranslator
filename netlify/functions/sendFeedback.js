@@ -34,7 +34,7 @@ exports.handler = async (event, context) => {
         };
     }
 
-    const scriptUrl = `https://script.google.com/macros/s/AKfycbzPVcsytcu40OCwT4P6TOBeDVktW2SwXXNxJipwFU0sjJ3QPzkqLDHYJN-_cpRGV8xn/exec?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&description=${encodeURIComponent(description)}`;
+    const scriptUrl = `https://script.google.com/macros/s/AKfycbzKmEeIEGNBloR31TnbE3J64bwAsmc4CZ9J3hhhIlC04y1BMOklbybLl-_-wzngUYpU/exec?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&description=${encodeURIComponent(description)}`;
 
     try {
         const response = await fetch(scriptUrl);
