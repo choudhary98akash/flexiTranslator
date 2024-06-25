@@ -20,7 +20,6 @@ export class FeedbackComponent {
     }
     else{
        const response = await this.sendfeedbackservice.sendFeedback(this.name,this.email,this.description);
-       console.log(response);
        if(response === undefined){
         alert('Failed to send feedback, Please try again later');
        }

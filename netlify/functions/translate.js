@@ -1,6 +1,6 @@
 exports.handler = async (event, context) => {
   const fetch = (await import('node-fetch')).default;
-  
+
   // Handle CORS preflight request
   if (event.httpMethod === 'OPTIONS') {
     return {
@@ -33,15 +33,23 @@ exports.handler = async (event, context) => {
   try {
     // Fetch translation from Google Apps Script
     const response = await fetch(scriptUrl);
-    const translatedText = await response.text();
-    
+    const responseText = await response.text();
+
+    // Attempt to parse the text as JSON
+    let translatedText;
+    try {
+      translatedText = JSON.parse(responseText);
+    } catch (error) {
+      translatedText = { text: responseText };
+    }
+
     // Return the translated text
     return {
       statusCode: 200,
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ translatedText }),
+      body: JSON.stringify(translatedText),
     };
   } catch (error) {
     // Handle errors

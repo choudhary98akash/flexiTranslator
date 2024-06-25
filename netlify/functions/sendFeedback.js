@@ -1,6 +1,6 @@
-
 exports.handler = async (event, context) => {
   const fetch = (await import('node-fetch')).default;
+
   // Handle preflight request for CORS
   if (event.httpMethod === 'OPTIONS') {
     return {
@@ -30,13 +30,22 @@ exports.handler = async (event, context) => {
 
   try {
     const response = await fetch(scriptUrl);
-    const result = await response.text();
+    const resultText = await response.text();
+
+    // Attempt to parse the text as JSON
+    let result;
+    try {
+      result = JSON.parse(resultText);
+    } catch (error) {
+      result = { text: resultText };
+    }
+
     return {
       statusCode: 200,
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ result }),
+      body: JSON.stringify(result),
     };
   } catch (error) {
     return {
