@@ -20,7 +20,6 @@ export class SendFeedbackService {
     })
     try {
       const response =await  axios.get(`${this.apiUrl}?${params.toString()}`);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       console.error('Error ',error);
