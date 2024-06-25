@@ -1,7 +1,7 @@
-const app = require('express');
-const cors = require('cors');
-app.use(cors());
 exports.handler = async (event, context) => {
+  const app = require('express');
+  const cors = require('cors');
+  app.use(cors());
   const fetch = (await import('node-fetch')).default;
   // Handle CORS preflight request
   if (event.httpMethod === 'OPTIONS') {
