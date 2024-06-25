@@ -10,7 +10,7 @@ export class SendFeedbackService {
 
   }
 
-  private apiUrl = 'https://667a2eed2887ae0008c80257--dynamic-croquembouche-427cf3.netlify.app/.netlify/functions/sendFeedback';
+  private apiUrl = 'https://dynamic-croquembouche-427cf3.netlify.app/.netlify/functions/sendFeedback';
 
   async sendFeedback(name : string , email : string, description : string) :Promise<string|undefined>{
     const params =  new URLSearchParams({

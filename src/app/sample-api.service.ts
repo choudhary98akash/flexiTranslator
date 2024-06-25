@@ -6,7 +6,7 @@ import { Environment } from 'src/Environment';
 })
 export class SampleApiService {
 
-  private apiUrl = 'https://66778d95cd8f4400075e1dac--dynamic-croquembouche-427cf3.netlify.app/.netlify/functions/translate'; // Update with your Netlify function URL
+  private apiUrl = 'https://dynamic-croquembouche-427cf3.netlify.app/.netlify/functions/translate'; // Update with your Netlify function URL
 
   async sendResult(text: string, targetLang: string, sourceLang: string): Promise<string | undefined> {
     const params = new URLSearchParams({
