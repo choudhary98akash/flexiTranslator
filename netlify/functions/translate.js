@@ -40,7 +40,7 @@ exports.handler = async (event, context) => {
     try {
       translatedText = JSON.parse(responseText);
     } catch (error) {
-      translatedText = { text: responseText };
+      translatedText = { translatedText: responseText };
     }
 
     // Return the translated text
