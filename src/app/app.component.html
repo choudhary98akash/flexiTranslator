@@ -3,8 +3,11 @@
   <span class="title-container" (click)="showHome()"><a href="#">FlexiTranslator</a></span>
   <ul class="nav-items">
     <span class="item" (click)="showHOwTo()">
-      <li><a href="#">HOW TO USE OUR SERVICE</a></li>
+      <li><a href="#">HOW TO CREATE YOUR OWN SERVICE</a></li>
     </span>
+    <!-- <span class="item" (click)="showGetService()">
+      <li><a href="#">GET SERVICE MADE</a></li>
+    </span> -->
     <span class="item" (click)="showFaq()">
       <li><a href="#">FAQs</a></li>
     </span>
@@ -46,7 +49,7 @@
 
       </div>
       <div>
-        <button class="btn-white-2" (click)="sendOutput(sourceLanguage,targetLanguage)">Translate</button>
+        <button class="btn-white-2" (click)="sendOutput(sourceLanguage,targetLanguage)">{{translateButton}}</button>
       </div>
 
       <div *ngIf="result" class="result-container">
@@ -89,6 +92,8 @@
 <app-faq *ngIf="faq"></app-faq>
 
 <app-feedback *ngIf="feedback"></app-feedback>
+
+<!-- <app-get-service *ngIf="getService"></app-get-service> -->
 
 <br>
 <br>

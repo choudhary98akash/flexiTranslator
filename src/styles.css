@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
+
 body { 
     background-image: url('../src/assets/images/BG-IMAGE-1376x786-PG3.png');
     background-repeat: repeat; 

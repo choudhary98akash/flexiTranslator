@@ -7,6 +7,7 @@ import { HowToComponent } from './how-to/how-to.component';
 import { FaqComponent } from './faq/faq.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { AnimateComponent } from './animate/animate.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AnimateComponent } from './animate/animate.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

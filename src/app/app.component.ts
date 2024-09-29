@@ -13,12 +13,13 @@ export class AppComponent implements OnInit{
     private sampleApiService : SampleApiService,
     private fetchStatService : FetchStatsService
    ){}
-
+  translateButton = 'Translate';
   title = 'translator';
   home = true;
   faq = false;
   feedback = false;
   howto = false;
+  getService = false;
   contact = false;
   inputText = '';
   resultText : any;
@@ -153,7 +154,7 @@ export class AppComponent implements OnInit{
 
   animateValue(key: keyof Stats, end: number) {
     let start = 0;
-    const duration = 2000; // duration in milliseconds
+    const duration = 2000; 
     const stepTime = Math.abs(Math.floor(duration / end));
     const obj = this.stats;
 
@@ -173,7 +174,9 @@ export class AppComponent implements OnInit{
       alert('Please enter something to convert');
     }
     else{
+      this.translateButton = 'Please wait while translating.....';
       this.resultText = await this.sampleApiService.sendResult(this.inputText,target,source);
+      this.translateButton = 'Translate';
     }
      this.resultText === undefined? this.result = false : this.result = true;
   }
@@ -185,6 +188,7 @@ export class AppComponent implements OnInit{
     this.feedback = false;
     this.howto = false;
     this.contact = false;
+    this.getService = false;
   }
   showFeedBack() {
     this.home = false;
@@ -192,6 +196,7 @@ export class AppComponent implements OnInit{
     this.feedback = true;
     this.howto = false;
     this.contact = false;
+    this.getService = false;
   }
 
   showFaq() {
@@ -200,6 +205,7 @@ export class AppComponent implements OnInit{
     this.feedback = false;
     this.howto = false;
     this.contact = false;
+    this.getService = false;
   }
   showHOwTo() {
     this.home = false;
@@ -207,7 +213,16 @@ export class AppComponent implements OnInit{
     this.feedback = false;
     this.howto = true;
     this.contact = false;
+    this.getService = false;
   }
+  // showGetService() {
+  //   this.home = false;
+  //   this.faq = false;
+  //   this.feedback = false;
+  //   this.howto = false;
+  //   this.contact = false;
+  //   this.getService = true;
+  // }
 }
 
 
