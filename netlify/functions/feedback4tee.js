@@ -39,7 +39,7 @@ exports.handler = async (event, context) => {
     }
   
     // Construct the request to your Google Apps Script
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbyI84Xr1QLkEPgH4RxEkQ_Uk8dotMNOUqxfAx3BoJk5lSjJxm8xOksbUPKGFvqI_dk/exec';
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzjr8oPRc9NVyaa6wOF9Ty90lMoPigOnfPiqc8QPLxyCUKXxU9_G0CiCwr9P7wAAusN/exec';
   
     try {
       const response = await fetch(scriptUrl, {
