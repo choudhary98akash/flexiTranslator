@@ -39,7 +39,7 @@ exports.handler = async (event, context) => {
     }
   
     // Construct the request to your Google Apps Script
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzjr8oPRc9NVyaa6wOF9Ty90lMoPigOnfPiqc8QPLxyCUKXxU9_G0CiCwr9P7wAAusN/exec';
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbwjK0CTIWFmXuaFTsAQ_oP_TQcllUSlspj-5axu_xof18gvEcdPkxz8KW9J3O7yslht/exec';
   
     try {
       const response = await fetch(scriptUrl, {
@@ -78,3 +78,11 @@ exports.handler = async (event, context) => {
     }
   };
   
+
+
+
+//   ##########################################
+//   This function is made for my tshirt buiness and i have create a cu
+//   tomised form for it , i can call the this netifly way i can have a fuction to call my script form the code
+//   which is on github and help myself out of it....
+//  the script called is file name script 2 under the google script for the submit form sheet
