@@ -47,6 +47,7 @@ export class AppComponent implements OnInit{
     { name: "Czech", code: "cs" },
     { name: "Danish", code: "da" },
     { name: "Dutch", code: "nl" },
+    { name: "English", code: "en" },
     { name: "Esperanto", code: "eo" },
     { name: "Estonian", code: "et" },
     { name: "Filipino (Tagalog)", code: "tl" },
